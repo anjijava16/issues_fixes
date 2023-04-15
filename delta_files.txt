@@ -1,0 +1,43 @@
+zsh: command not found: g
+welcome@welcomes-MacBook-Pro ~ % ls -ltr /tmp/delta-table/
+ls: /tmp/delta-table/: No such file or directory
+welcome@welcomes-MacBook-Pro ~ % hadoop fs -ls /tmp/delta-table/
+2023-04-15 10:13:47,485 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Found 7 items
+drwxr-xr-x   - welcome supergroup          0 2023-04-15 10:13 /tmp/delta-table/_delta_log
+-rw-r--r--   1 welcome supergroup        296 2023-04-15 10:13 /tmp/delta-table/part-00000-1fac6551-33e8-492d-b819-f689b20b3b8d-c000.snappy.parquet
+-rw-r--r--   1 welcome supergroup        463 2023-04-15 10:13 /tmp/delta-table/part-00001-4711b769-3de5-484d-ad94-42892ba325e3-c000.snappy.parquet
+-rw-r--r--   1 welcome supergroup        463 2023-04-15 10:13 /tmp/delta-table/part-00003-3d21f9b7-d73a-4112-bc4d-ec9228b3bc4b-c000.snappy.parquet
+-rw-r--r--   1 welcome supergroup        463 2023-04-15 10:13 /tmp/delta-table/part-00005-7de4968d-a429-44be-8564-7f5b248e8a2b-c000.snappy.parquet
+-rw-r--r--   1 welcome supergroup        463 2023-04-15 10:13 /tmp/delta-table/part-00007-063fb66a-e130-41fc-ae82-23ae173c4a26-c000.snappy.parquet
+-rw-r--r--   1 welcome supergroup        463 2023-04-15 10:13 /tmp/delta-table/part-00009-5e398a07-d197-40d4-8639-2103149b4943-c000.snappy.parquet
+welcome@welcomes-MacBook-Pro ~ % hadoop fs -cat /tmp/delta-table
+2023-04-15 10:14:07,738 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+cat: `/tmp/delta-table': Is a directory
+welcome@welcomes-MacBook-Pro ~ % hadoop fs -text /tmp/delta-table
+2023-04-15 10:14:16,317 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+text: `/tmp/delta-table': Is a directory
+welcome@welcomes-MacBook-Pro ~ % hadoop fs -text /tmp/delta-table/_delta_log
+2023-04-15 10:14:26,807 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+text: `/tmp/delta-table/_delta_log': Is a directory
+welcome@welcomes-MacBook-Pro ~ % hadoop fs -cat /tmp/delta-table/_delta_log
+2023-04-15 10:15:20,792 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+cat: `/tmp/delta-table/_delta_log': Is a directory
+welcome@welcomes-MacBook-Pro ~ % hadoop fs -ls /tmp/delta-table/_delta_log
+2023-04-15 10:15:28,821 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Found 1 items
+-rw-r--r--   1 welcome supergroup       1602 2023-04-15 10:13 /tmp/delta-table/_delta_log/00000000000000000000.json
+welcome@welcomes-MacBook-Pro ~ % hadoop fs -text /tmp/delta-table/_delta_log/00000000000000000000.json
+2023-04-15 10:15:46,283 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2023-04-15 10:15:47,137 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+{"commitInfo":{"timestamp":1681567987398,"operation":"WRITE","operationParameters":{"mode":"ErrorIfExists","partitionBy":"[]"},"isBlindAppend":true,"operationMetrics":{"numFiles":"6","numOutputBytes":"2611","numOutputRows":"5"}}}
+{"protocol":{"minReaderVersion":1,"minWriterVersion":2}}
+{"metaData":{"id":"5ac82b2d-07ec-473a-90ab-e647b686ee70","format":{"provider":"parquet","options":{}},"schemaString":"{\"type\":\"struct\",\"fields\":[{\"name\":\"id\",\"type\":\"long\",\"nullable\":true,\"metadata\":{}}]}","partitionColumns":[],"configuration":{},"createdTime":1681567982769}}
+{"add":{"path":"part-00000-1fac6551-33e8-492d-b819-f689b20b3b8d-c000.snappy.parquet","partitionValues":{},"size":296,"modificationTime":1681567987216,"dataChange":true}}
+{"add":{"path":"part-00001-4711b769-3de5-484d-ad94-42892ba325e3-c000.snappy.parquet","partitionValues":{},"size":463,"modificationTime":1681567987222,"dataChange":true}}
+{"add":{"path":"part-00003-3d21f9b7-d73a-4112-bc4d-ec9228b3bc4b-c000.snappy.parquet","partitionValues":{},"size":463,"modificationTime":1681567987218,"dataChange":true}}
+{"add":{"path":"part-00005-7de4968d-a429-44be-8564-7f5b248e8a2b-c000.snappy.parquet","partitionValues":{},"size":463,"modificationTime":1681567987223,"dataChange":true}}
+{"add":{"path":"part-00007-063fb66a-e130-41fc-ae82-23ae173c4a26-c000.snappy.parquet","partitionValues":{},"size":463,"modificationTime":1681567986805,"dataChange":true}}
+{"add":{"path":"part-00009-5e398a07-d197-40d4-8639-2103149b4943-c000.snappy.parquet","partitionValues":{},"size":463,"modificationTime":1681567987221,"dataChange":true}}
+welcome@welcomes-MacBook-Pro ~ % 
+
