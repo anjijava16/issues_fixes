@@ -1,0 +1,15 @@
+zsh: no matches found: local[*]
+welcome@welcomes-MacBook-Pro ~ % spark-shell --master yarn
+
+
+2023-04-15 09:59:26,043 WARN util.Utils: Your hostname, welcomes-MacBook-Pro.local resolves to a loopback address: 127.0.0.1; using 10.118.3.68 instead (on interface en0)
+2023-04-15 09:59:26,044 WARN util.Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+2023-04-15 09:59:26,582 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+2023-04-15 09:59:38,168 WARN yarn.Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+
+zsh: suspended  spark-shell --master yarn
+welcome@welcomes-MacBook-Pro ~ %
+welcome@welcomes-MacBook-Pro ~ %
+welcome@welcomes-MacBook-Pro ~
